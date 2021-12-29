@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  #CRUD dos produtos
+  resources :products
   devise_for :users
   get 'home/index'
   #colocar o sign in como página inicial
