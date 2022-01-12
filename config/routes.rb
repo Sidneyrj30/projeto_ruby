@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  resources :products
   devise_for :users
   get 'home/index'
-  #colocar o sign in como página inicial
+
   devise_scope :user do
     root to: "devise/sessions#new"
   end
