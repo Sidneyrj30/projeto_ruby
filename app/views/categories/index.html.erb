@@ -4,4 +4,9 @@
   <% end %>
 </ul>
 <hr>
-<p><%= link_to "New category", new_category_path%></p>
+<p>
+
+<% if can? :create, Category %>
+  <%= link_to "New category", new_category_path%>
+<% end %>
+</p>
