@@ -1,5 +1,15 @@
 <h3>Update Product Details</h3>
 <%= form_with model: @product do |form| %>
+
+  <% if @product.errors.any?%>
+    <h2>Errors:</h2>
+    <ul>
+      <% @product.errors.full_messages.each do |message|%>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
   <%= form.text_field :name, placeholder: "name" %>
   <%= form.text_field :price, placeholder: "price" %>
   <%= collection_select(:product, :category_id, Category.all, :id, :name, prompt: true)%>

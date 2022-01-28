@@ -1,5 +1,15 @@
 <h3>Update Category Details</h3>
+
 <%= form_with model: @category do |form| %>
+  <% if @category.errors.any? %>
+    <h2>Errors:</h2>
+    <ul>
+      <% @category.errors.full_messages.each do |message|%>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  
   <%= form.text_field :name, placeholder: "name" %>
   <%= form.submit %>
 <% end %>
