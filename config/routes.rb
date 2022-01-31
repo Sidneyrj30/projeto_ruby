@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :categories
   resources :products
+
   devise_for :users
   get 'home/index'
   root 'products#index'
